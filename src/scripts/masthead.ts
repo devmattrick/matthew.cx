@@ -1,9 +1,9 @@
 import * as THREE from 'three';
 
-const canvas = <HTMLCanvasElement> document.getElementById('mastheadBackground');
+const canvas = <HTMLCanvasElement> document.getElementById('mastheadGraphic');
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientWidth, 0.1, 1000);
 camera.position.set(0, 0, 300);
 camera.lookAt(0, 0, 0);
 const material = new THREE.MeshPhongMaterial({
@@ -36,7 +36,6 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setClearColor(0x161541);
 
 const mesh = new THREE.Mesh(geometry, material);
-mesh.position.set(100, 0, 0);
 mesh.receiveShadow = true;
 scene.add(mesh);
 
@@ -46,25 +45,6 @@ light.castShadow = true;
 scene.add(light);
 
 scene.add(new THREE.AmbientLight(0x161541, 3));
-
-const starsGeometry = new THREE.Geometry();
-
-for (let i = 0; i < 10000; i++) {
-
-  const star = new THREE.Vector3();
-  star.x = THREE.Math.randFloatSpread(2000);
-  star.y = THREE.Math.randFloatSpread(2000);
-  star.z = THREE.Math.randFloat(-2000, -100)
-
-  starsGeometry.vertices.push(star);
-
-}
-
-const starsMaterial = new THREE.PointsMaterial({ color: 0xDDDDDD });
-
-const starField = new THREE.Points(starsGeometry, starsMaterial);
-
-scene.add(starField);
 
 function resize() {
   const width = canvas.clientWidth;

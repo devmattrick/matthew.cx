@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Ailerons';
+  src: url('../fonts/Ailerons.otf') format('opentype');
+}
+
 * {
   box-sizing: border-box;
 }
@@ -15,7 +20,12 @@ img, canvas, svg {
 }
 
 h1 {
-  font-size: 5em;
-  font-weight: 300;
-  text-indent: -0.08em;
+  font-family: 'Ailerons', sans-serif;
+  font-size: 6em;
+  font-weight: normal;
+  text-indent: -0.15em;
+
+  @media screen and (max-width: 1500px) {
+    font-size: 4.5em;
+  }
 }
