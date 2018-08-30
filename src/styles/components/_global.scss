@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+
+img, canvas, svg {
+  display: block;
+}
+
+h1 {
+  font-size: 5em;
+  font-weight: 300;
+  text-indent: -0.08em;
+}

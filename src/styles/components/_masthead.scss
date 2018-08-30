@@ -1,0 +1,32 @@
+.masthead {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.masthead__content {
+  position: relative;
+  z-index: 1;
+  color: #FFF;
+  width: 100%;
+}
+
+.masthead__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.masthead__header {
+  margin: 0;
+}
+
+.masthead__subheader {
+  margin: 0;
+  font-size: 1.8em;
+}
