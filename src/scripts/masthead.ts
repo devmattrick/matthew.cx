@@ -52,6 +52,7 @@ function resize() {
 
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
+  renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(width, height, false);
 }
 
