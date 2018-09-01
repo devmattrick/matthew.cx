@@ -11,6 +11,10 @@ const material = new THREE.MeshPhongMaterial({
 });
 material.flatShading = true;
 
+const basicMaterial = new THREE.MeshBasicMaterial({
+  color: 0xffffff
+});
+
 const geometry = new THREE.SphereGeometry(
   55,
   20,
@@ -30,7 +34,7 @@ geometry.vertices.forEach(v => {
   v.add(new THREE.Vector3().setFromSpherical(spherical));
 });
 
-const renderer = new THREE.WebGLRenderer({ canvas });
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setClearColor(0x161541);
@@ -38,6 +42,11 @@ renderer.setClearColor(0x161541);
 const mesh = new THREE.Mesh(geometry, material);
 mesh.receiveShadow = true;
 scene.add(mesh);
+
+const torus = new THREE.TorusBufferGeometry(100, 0.3, 10, 50);
+const torusMesh = new THREE.Mesh(torus, basicMaterial);
+scene.add(torusMesh);
+torusMesh.rotation.set(140, -75, 0);
 
 const light = new THREE.PointLight(0xFE4E4E, 1);
 light.position.set(100, 100, 200);
