@@ -12,7 +12,9 @@ const material = new THREE.MeshPhongMaterial({
 material.flatShading = true;
 
 const basicMaterial = new THREE.MeshBasicMaterial({
-  color: 0xffffff
+  color: 0xffffff,
+  opacity: 0.55,
+  transparent: true
 });
 
 const geometry = new THREE.SphereGeometry(
@@ -43,7 +45,7 @@ const mesh = new THREE.Mesh(geometry, material);
 mesh.receiveShadow = true;
 scene.add(mesh);
 
-const torus = new THREE.TorusBufferGeometry(100, 0.3, 10, 50);
+const torus = new THREE.TorusBufferGeometry(100, 3, 10, 50);
 const torusMesh = new THREE.Mesh(torus, basicMaterial);
 scene.add(torusMesh);
 torusMesh.rotation.set(140, -75, 0);
