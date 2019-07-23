@@ -1,7 +1,7 @@
 {
   "name": "matthew.cx",
   "version": "1.0.0",
-  "description": "My personal website.",
+  "description": "Matthew McCune's personal website.",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
